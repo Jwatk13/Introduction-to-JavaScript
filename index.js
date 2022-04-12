@@ -19,8 +19,13 @@ Do the following:
 
    HINT: no function required
 */
-
-
+let votingAge = 12
+if (votingAge >= 18) {
+  console.log(true);
+} else {
+  console.log(false);
+}
+console.log(votingAge);
 
 /*
 Task 1b - Values (not auto tested)
@@ -33,10 +38,16 @@ Do the following:
 
    HINT: no function required
 */
+let firstThing = 'two';
+let secondThing = 'two';
 
-
-
-
+if (firstThing === secondThing) {
+  console.log(true);
+  if(firstThing === secondThing) {
+   firstThing = 'one';
+  };
+}
+  console.log(firstThing);
 
 /*
 Task 1c - Convert Strings to Numbers (not auto tested)
@@ -48,7 +59,9 @@ Do the following:
 
    HINT: look up the Number method
 */
-
+let number = "1999";
+parseInt(number);
+console.log(number);
 
 
 
