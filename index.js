@@ -77,7 +77,7 @@ Do the following:
 function multiply(a,b){
   return a*b;
 }
-console.log(multiply(7,5));
+
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -93,7 +93,7 @@ Do the following:
 function dogYears(myAge){
   return myAge * 7;
 }
-console.log(dogYears(7));
+
 
 
 
@@ -188,9 +188,38 @@ Use the game function below to do the following:
 RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
 */
 
+let computerChoice = Math.floor(Math.random()*3);
+  
 function game(user, computer){
-  /*add your code here*/
+ if (computerChoice == 1) {
+   return computer == 'rock';
+  } else if (computerChoice = 2) {
+    return computer == 'paper';
+  } else if (computerChoice = 3) {
+    return computer == 'scissors';
+  }
+  console.log(user,computer);
+    if (user == 'rock' && computer == 'scissors') {
+      return "you win!";
+    } else if (user == 'rock' && computer == 'paper') {
+      return "you lose!";
+    } else if (user == 'rock' && computer == 'rock') {
+     return "it's a tie";
+    } else if (user == 'paper' && computer == 'rock') {
+     return "you win!";
+    } else if (user == 'paper' && computer == 'scissors') {
+     return "you lose!";
+    } else if (user == 'paper' && computer == 'paper') {
+     return "it's a tie";
+    } else if (user == 'scissors' && computer == 'paper') {
+     return "you win!";
+    } else if (user == 'scissors' && computer == 'rock') {
+     return "you lose!";
+    } else if (user == 'scissors' && computer == 'scissors') {
+     return "it's a tie";
+    }
 }
+console.log(game('rock', 'scissors'));
 
 
 
@@ -205,9 +234,10 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-  /*add your code here*/
+function miles(numberRecieved){
+  return numberRecieved * 0.621371;
 }
+
 
 
 
@@ -219,8 +249,8 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-  /*add your code here*/
+function feet(numRecieved){
+  return numRecieved / 30.48;
 }
 
 
@@ -239,8 +269,8 @@ Using the annoyingSong function below do the following:
 4. Each time the annoyingSong is run from this loop, it should console.log the string that was returned. 
 */
 
-function annoyingSong(/*add your code here*/){
-      /*add your code here*/
+function annoyingSong(startingNum){
+   let song = `${startingNum} bottles of soda on the wall, ${startingNum} bottles of soda, take one down pass it around {number you gave as an argument minus 1} bottles of soda on the wall"` 
 }
 
 
@@ -259,9 +289,20 @@ Using the grade function below do the following:
  below should return 'you got an F'
 */
 
-function grade(/*Your Code here */){
-/*Your Code here */
+function grade(gradeNum){
+ if (gradeNum >= 90 && gradeNum <= 100){
+   return 'you got an A';
+ } else if (gradeNum >= 80 && gradeNum <= 89){
+   return 'you got a B';
+ } else if (gradeNum >= 70 && gradeNum <= 79){
+   return 'you got a C';
+ } else if (gradeNum >= 60 && gradeNum <= 69){
+   return 'you got a D';
+ } else if (gradeNum < 60){
+   return 'you got an F';
+ }
 }
+console.log(grade(98))
 
 
 
