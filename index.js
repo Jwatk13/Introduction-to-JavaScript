@@ -144,27 +144,24 @@ NOTE 2: This is a great time to check the tests to see what it expects, versus w
 */  
 
 function hungryDog(weight, age){
-  if (age >= 1) {
-    if (weight <= 5) {
-      return 0.05 * weight;
-    } else if (weight > 5 && weight <= 10) {
-      return 0.04 * weight;
-    } else if (weight > 10 && weight <= 15) {
-      return 0.03 * weight;
-    } else if (weight > 15) {
-      return 0.02 * weight;
+  if (age > 0 && age < 0.33) {
+        return 0.1 * weight;
+       } else if (age >= 0.33  && age < 0.58) {
+        return 0.05 * weight;
+      } else if (age >= 0.58 && age < 1) {
+        return 0.04 * weight;
+      } else if (age >= 1 && weight <= 5) {
+        return 0.05 * weight;
+      } else if (weight > 5 && weight <= 10) {
+        return 0.04 * weight;
+      } else if (weight >= 11 && weight <= 15) {
+        return 0.03 * weight;
+      } else if (weight > 15) {
+        return 0.02 * weight;
+      } 
     }
-  } else if (weight < 5) {
-     if ((age / 12).toFixed(2) > 0 && age < 0.33) {
-       return 0.1 * weight;
-     } else if ((age / 12).toFixed(2) >= 0.33  && age < 0.58) {
-       return 0.05 * weight;
-     } else if ((age / 12).toFixed(2) >= 0.58 && age <= 1) {
-       return 0.04 * weight;
-     }
-  } 
-}
-
+    
+console.log(hungryDog(16, 1));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -172,8 +169,8 @@ function hungryDog(weight, age){
 // Rock, Paper, Scissors - Let's play against the computer!
 /*
 Do the following:
-1. Create a new variable that randomly generates the computer's choice, this must not be done inside the function
-2. Use Math.random to determine the computer's choice (Math.random gives a random number between 0 and 1)
+    1. Create a new variable that randomly generates the computer's choice, this must not be done inside the function 
+    2. Use Math.random to determine the computer's choice (Math.random gives a random number between 0 and 1)
 3. Make a conditional that changes the variable to "rock", "paper", or "scissors" based on it's random number
 
 Use the game function below to do the following:
@@ -188,42 +185,39 @@ Use the game function below to do the following:
 RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
 */
 
-
+const compChoice = [Math.floor(Math.random()*3)];
+   if (compChoice == 0){
+     console.log('rock');
+   } else if (compChoice == 1){
+     console.log('paper');
+   } else if (compChoice == 2){
+     console.log('scissors');
+   }
   
-function game(user, computer){
-  let computerChoice = Math.random()*3;
-   if (computerChoice === 0) { 
-     return computer == 'rock'; 
-  } else if (computerChoice === 1) {
-    return computer == 'paper';
-  } else if (computerChoice === 2) {
-    return computer == 'scissors';
-  } 
-}
-console.loggame(('rock', computer));
-   
-//     if (user == 'rock' && computer == 'scissors') {
-//       return "you win!";
-//     } else if (user == 'rock' && computer == 'paper') {
-//       return "you lose!";
-//     } else if (user == 'rock' && computer == 'rock') {
-//      return "it's a tie";
-//     } else if (user == 'paper' && computer == 'rock') {
-//      return "you win!";
-//     } else if (user == 'paper' && computer == 'scissors') {
-//      return "you lose!";
-//     } else if (user == 'paper' && computer == 'paper') {
-//      return "it's a tie";
-//     } else if (user == 'scissors' && computer == 'paper') {
-//      return "you win!";
-//     } else if (user == 'scissors' && computer == 'rock') {
-//      return "you lose!";
-//     } else if (user == 'scissors' && computer == 'scissors') {
-//      return "it's a tie";
- 
-//   }
-// }
+  function game(user, compChoice){
+   if (user == 'rock' && compChoice == 'scissors'){
+       return "you win!";
+     } else if (user == 'paper' && compChoice == 'scissors'){
+         return "you lose!";
+       } else if (user == 'scissors' && compChoice == 'scissors'){
+           return "it's a tie";
+         } else if (user == 'scissors' && compChoice == 'paper'){
+          return "you win!";
+        } else if (user == 'rock' && compChoice == 'paper'){
+            return "you lose!";
+          } else if (user == 'paper' && compChoice == 'paper'){
+              return "it's a tie"; 
+            } else if (user == 'paper' && compChoice == 'rock'){
+              return "you win!";
+              } else if (user == 'scissors' && compChoice == 'rock'){
+                return "you lose!";
+                } else if (user == 'rock' && compChoice == 'rock'){
+                  return "it's a tie";
+                }
+              }
 
+console.log(game('rock', compChoice));
+   
 
 
 
@@ -317,7 +311,6 @@ function grade(gradeNum){
  }
 }
 console.log(grade(98))
-
 
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
